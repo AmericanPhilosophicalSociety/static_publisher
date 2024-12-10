@@ -4,6 +4,10 @@
 
 bundle exec jekyll serve --config _config_development.yml
 
+## Check for outdated gems
+
+bundle outdated
+
 ## Documentation for user - fill this in
 
 + clone this site from git
