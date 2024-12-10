@@ -1,0 +1,17 @@
+- title: "Essays"
+  url: /essays
+
+- title: "Blog"
+  url: /blog
+
+- title: "Other Page Types"
+  dropdown-items:
+    - title: "Table of Contents"
+      url: /table-of-contents
+    - title: "Photo Gallery"
+      url: /photographs
+    - title: "Data"
+      url: /data
+
+- title: "About"
+  url: /about

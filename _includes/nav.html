@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a href="{{ site.baseurl }}/">
+        <span class="navbar-brand">{{ site.title }}</span><br>
+        <!-- <span class="navbar-brand-secondary">With Optional Subtitle</span> -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            {% for page in site.data.nav %}
+                {% if page.url %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ page.url | relative_url }}">
+                            {{ page.title }}
+                        </a>
+                    </li>
+                {% elsif page.dropdown-items %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ page.title }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for item in page.dropdown-items %}
+                                <li><a class="dropdown-item" href="{{ item.url | relative_url}}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
